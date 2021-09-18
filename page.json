@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "title": "CPU巡检",
+      "print": [
+        {
+          "description": "CPU个数",
+          "query": "system_n_cpus{instance=~\"$instance\"}"
+        },
+        {
+          "description": "系统每分钟负载",
+          "query": "max(system_load1{instance=~\"$instance\"}) / (count(cpu_usage_idle{instance=~\"$instance\"})-1)"
+        }
+      ]
+    },
+    {
+      "title": "内存巡检",
+      "print": [
+        {
+          "description": "内存使用率",
+          "query": "mem_used_percent{instance=~\"$instance\"}"
+        },
+        {
+          "description": "内存总量",
+          "query": "mem_total{instance=~\"$instance\"}"
+        }
+      ]
+    },
+    {
+      "title": "磁盘巡检",
+      "print": [
+        {
+          "description": "磁盘总量",
+          "query": "sum(disk_total{instance=~\"$instance\"})"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
