@@ -35,12 +35,12 @@ func load(f *os.File) string {
 func Load(f string) string {
 	file, err := os.Open(f)
 	if err != nil {
-		log.Printf("配置文件获取失败 [Error: %s\n", err.Error())
+		log.Printf("配置文件获取失败 [Error]: %s\n", err.Error())
 	}
 	defer func(file *os.File) {
 		err := file.Close()
 		if err != nil {
-			log.Printf("配置文件关闭异常 [Error: %s\n", err.Error())
+			log.Printf("配置文件关闭异常 [Error]: %s\n", err.Error())
 		}
 	}(file)
 	json := load(file)

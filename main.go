@@ -1,7 +1,10 @@
 package main
 
-import "month-report/config"
+import (
+	"month-report/utils"
+)
 
 func main() {
-	config.Load("./page.json")
+	//json := config.Load("./page.json")
+	utils.PDF("hello.pdf", "utils/sarasa-term-sc-regular.ttf")
 }

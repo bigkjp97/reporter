@@ -5,7 +5,8 @@
       "print": [
         {
           "description": "CPU个数",
-          "query": "system_n_cpus{instance=~\"$instance\"}"
+          "query": "system_n_cpus{instance=~\"$instance\"}",
+          "pic": "./hello.jpg"
         },
         {
           "description": "系统每分钟负载",
